@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Saya</title>
+    <script>
+        // Fungsi untuk memulai efek kedip
+        window.onload = function() {
+            var profilePic = document.getElementById('profile-pic');
+            var stars = document.getElementById('stars');
+            profilePic.style.opacity = 0;
+
+            setTimeout(function() {
+                profilePic.style.transition = "opacity 1s";
+                profilePic.style.opacity = 1;
+            }, 500);
+
+            // Animasi bintang
+            setInterval(function() {
+                var star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.animation = 'falling 1.5s ease-in-out infinite';
+                stars.appendChild(star);
+            }, 100);
+        };
+    </script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: maroon;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-top: 20px;
+        }
+        #profile-container {
+            margin-top: 100px;
+        }
+        #profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            opacity: 0;
+            animation: fadeIn 3s forwards;
+        }
+        #stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            top: -10px;
+            width: 5px;
+            height: 5px;
+            background-color: gold;
+            border-radius: 50%;
+            opacity: 0;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        #bling {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2em;
+            color: yellow;
+            animation: sparkle 2s infinite;
+        }
+        @keyframes sparkle {
+            0% { top: -50px; opacity: 1; }
+            50% { top: 50px; opacity: 0.5; }
+            100% { top: -50px; opacity: 1; }
+        }
+        nav {
+            margin-top: 30px;
+        }
+        nav a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: rgba(199, 140, 14, 0.2);
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: rgba(189, 154, 79, 0.5);
+        }
+        .content-box {
+            display: none;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+        }
+        .social-links {
+            margin-top: 30px;
+        }
+        .social-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: white;
+            font-size: 1.5em;
+        }
+        .social-links a:hover {
+            color: rgb(116, 80, 14);
+        }
+    </style>
+</head>
+<body>
+
+
+    <div id="profile-container">
+        <img id="profile-pic" src="profile.jpg" alt="Profile Picture">
+        <h1>WELCOME TO MY PORTOFOLIO</h1>
+        <p>Hi, saya Marvella. Ini adalah website portofolio saya. Klik beberapa menu untuk mengetahui lebih banyak tentang saya!</p>
+    </div>
+
+    <nav>
+        <a href="#" onclick="showContent('about')">Tentang Saya</a>
+        <a href="#" onclick="showContent('education')">Pendidikan</a>
+        <a href="#" onclick="showContent('experience')">Pengalaman</a>
+        <a href="#" onclick="showContent('skills')">Kemampuan</a>
+    </nav>
+
+    <div id="about" class="content-box">
+        <h2>Tentang Saya</h2>
+        <p>Saya adalah seorang pelajar yang saat ini masih duduk di bangku kelas 11 jurusan teknik jaringan komputer di SMKN 1 WONOSOBO. Saya berpengalaman dalam bidang organisasi OSIS SMKN 1 WONOSOBO.  Saya memiliki ketertarikaan pada bidang administrasi. Terlatih untuk bekerja menggunakan komputer dan mampu berkomunikasi dengan baik, serta mampu untuk bekerja dalam tim dan berjiwa sosial.</p>
+    </div>
+
+    <div id="education" class="content-box">
+        <h2>Pendidikan</h2>
+        <p>* SMKN 1 WONOSOBO ( 2023-2026 )</p>
+        menempuh pendidikan di jurusan teknik jaringan komputer
+        <p>* SMPN 1 KALIKAJAR ( 2020-2023 )</p>
+        <p>* MI MA'ARIF BUDILUHUR ( 2014-2020 )></p>
+    </div>
+
+    <div id="experience" class="content-box">
+        <h2>Pengalaman</h2>
+        <p>* OSIS SMKN 1 WONOSOBO ( 2023-2024 )</p>
+            Anggota seksi bidang keterampilan, kekreatifan, dan kewirausahaan
+         <p>* OSIS SMKN 1 WONOSOBO ( 2024-2025 )</p>
+            Koordinator seksi bidang keterampilan, kekreatifan, dan kewirausahaan
+    </div>
+
+    <div id="skills" class="content-box">
+        <h2>Kemampuan</h2>
+        <p>* Mampu menggunakan MS WORD</p>
+        <p>* Mampu menggunakan MS EXCEL</p>
+        <p>* Mampu menggunakan canva</p>
+    </div>
+
+    <div class="social-links">
+        <a href="https://www.instagram.com/mlvee_o?igsh=MWdkZWl6a3RtYW90dQ==" target="_blank">Instagram</a>
+        
+    </div>
+
+    <script>
+        window.onload = function() {
+            // Tampilkan gambar profil dengan efek fadeIn
+            document.getElementById('profile-pic').style.opacity = 1;
+        }
+
+        function showContent(contentId) {
+            // Sembunyikan semua konten
+            var contents = document.querySelectorAll('.content-box');
+            contents.forEach(function(content) {
+                content.style.display = 'none';
+            });
+
+            // Tampilkan konten yang sesuai
+            document.getElementById(contentId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
